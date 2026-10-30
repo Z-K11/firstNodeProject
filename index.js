@@ -23,7 +23,7 @@ const server = http.createServer((req, res) => {
     }
     else
     {
-      res.writeHead(200,{"content-type":'text/html'});
+      res.writeHead(404,{"content-type":'text/html'});
       res.end(notFound);
     }
 });
