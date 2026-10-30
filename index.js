@@ -2,6 +2,7 @@ import http from 'node:http';
 import homePage from './home.js';
 import aboutPage from './about.js';
 import contactPage from './contact.js';
+import notFound from './notFound.js';
 const server = http.createServer((req, res) => {
   console.log(req.url);      
     if(req.url==='/')
@@ -19,6 +20,11 @@ const server = http.createServer((req, res) => {
     {
       res.writeHead(200,{"content-type":'text/html'});
       res.end(contactPage);
+    }
+    else
+    {
+      res.writeHead(200,{"content-type":'text/html'});
+      res.end(notFound);
     }
 });
 server.listen(8080);
